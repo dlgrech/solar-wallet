@@ -1,10 +1,5 @@
-rootProject.name = "ksol"
+rootProject.name = "solar-wallet"
 
-include ":ksol-cli"
-include ":ksol-core"
-include ":ksol-keygen"
-include ":ksol-rpc"
-include ":ksol-solpay"
 include ":android"
 
 enableFeaturePreview("VERSION_CATALOGS")
