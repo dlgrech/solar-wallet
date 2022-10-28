@@ -1,1 +1,0 @@
-./gradlew --quiet ":ksol-cli:installDist" && ksol-cli/build/install/ksol-cli/bin/ksol-cli "$@"
