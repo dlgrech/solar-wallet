@@ -40,7 +40,12 @@ class MobileWalletAdapterCoordinatorFactory(
     val callbacks = MobileWalletAdapterScenarioCallbacks()
     val scenario = associationUri.createScenario(
       application.applicationContext,
-      MobileWalletAdapterConfig(true, 10, 10),
+      MobileWalletAdapterConfig(
+        true,
+        10,
+        10,
+        arrayOf(MobileWalletAdapterConfig.LEGACY_TRANSACTION_VERSION)
+      ),
       AuthIssuerConfig(application.getString(R.string.app_name)),
       callbacks
     )
