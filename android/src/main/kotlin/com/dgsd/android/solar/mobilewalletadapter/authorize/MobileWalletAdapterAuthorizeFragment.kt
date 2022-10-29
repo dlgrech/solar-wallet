@@ -22,7 +22,7 @@ class MobileWalletAdapterAuthorizeFragment :
   private val viewModel by viewModel<MobileWalletAdapterAuthorizeViewModel> {
     parametersOf(
       checkNotNull(appCoordinator.walletAdapterCoordinator?.authorizationRequest),
-      checkNotNull(appCoordinator.walletAdapterCoordinator?.callingPackage),
+      appCoordinator.walletAdapterCoordinator?.callingPackage,
     )
   }
 

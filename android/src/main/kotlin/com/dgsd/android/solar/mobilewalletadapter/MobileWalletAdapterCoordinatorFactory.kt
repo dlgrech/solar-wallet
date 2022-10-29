@@ -21,11 +21,6 @@ class MobileWalletAdapterCoordinatorFactory(
     uri: Uri,
     callingPackage: String?,
   ): MobileWalletAdapterCoordinator? {
-    if (callingPackage == null) {
-      // We only support local app deeplinks at the moment
-      return null
-    }
-
     val associationUri = AssociationUri.parse(uri)
     if (associationUri == null) {
       // Not a valid URI

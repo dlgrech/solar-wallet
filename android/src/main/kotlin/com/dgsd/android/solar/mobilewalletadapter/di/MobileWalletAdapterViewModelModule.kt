@@ -18,7 +18,7 @@ object MobileWalletAdapterViewModelModule {
           application = get(),
           session = getScoped(),
           authorizeRequest = params.get(),
-          callingPackage = params.get(),
+          callingPackage = params.getOrNull(),
           authorityManager = get()
         )
       }

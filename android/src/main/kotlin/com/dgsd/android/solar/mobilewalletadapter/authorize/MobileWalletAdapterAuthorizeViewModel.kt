@@ -12,7 +12,7 @@ import com.solana.mobilewalletadapter.walletlib.scenario.AuthorizeRequest
 
 class MobileWalletAdapterAuthorizeViewModel(
   application: Application,
-  private val callingPackage: String,
+  private val callingPackage: String?,
   private val authorizeRequest: AuthorizeRequest,
   private val session: WalletSession,
   private val authorityManager: MobileWalletAdapterAuthorityManager,
@@ -40,7 +40,7 @@ class MobileWalletAdapterAuthorizeViewModel(
 
   fun onApproveClicked() {
     runCatching {
-      authorityManager.createAuthority(callingPackage)
+      authorityManager.createAuthority(callingPackage, authorizeRequest)
     }.onSuccess { authority ->
       authorizeRequest.completeWithAuthorize(
         session.publicKey.key,
